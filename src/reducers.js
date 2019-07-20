@@ -1,4 +1,5 @@
 import {ADD_TODO, TOGGLE_TODO} from './action'
+import {combineReducers} from 'redux-loop';
 
 function todo(state = {todo: "Default todo", isCompleted: false}, action) {
     switch (action.type) {
@@ -27,4 +28,4 @@ function todos(state = [{todo: "Default todo", isCompleted: false}, {todo: "Depl
 }
 
 
-export default todo;
+export default combineReducers({todo, todos});

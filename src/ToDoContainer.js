@@ -3,12 +3,11 @@ import ToDoComponent from "./ToDoComponent";
 import toggleTodo from "./action"
 
 const mapStateToProps = (state) => {
-    console.log(state, "todocomponent")
     return {
-        isCompleted: state.isCompleted,
-        todo: state.todo
+        isCompleted: state.todo.isCompleted,
+        todo: state.todo.todo
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -16,11 +15,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(toggleTodo())
         }
     }
-}
+};
 
 const ToDoContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(ToDoComponent)
+)(ToDoComponent);
 
 export default ToDoContainer
